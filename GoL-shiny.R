@@ -62,7 +62,7 @@ server = function(input, output, session) {
     #timer
     invalidateLater(input$ticker, session)
         
-        #Check fro start/stop buttons
+        #Check for start/stop buttons
         if ( !is.null(isolate(store$status)) ) { 
           
           field = isolate(store$field)
@@ -71,7 +71,7 @@ server = function(input, output, session) {
             south(east(field)) + north(east(field)) +
             south(west(field)) + north(west(field))
           
-          # Aplying rules of GoL
+          # Applying rules of GoL
           newfield = field
           newfield[field==0 & neighbors==3] = 1
           newfield[field==1 & neighbors<2] = 0
